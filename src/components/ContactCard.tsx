@@ -1,7 +1,7 @@
-/* eslint-disable react/prop-types */
 'use client';
 
 import { Card } from 'react-bootstrap';
+import Link from 'next/link'; // ✅ Import Link
 import { Contact } from '@/lib/validationSchemas';
 
 interface Props {
@@ -19,13 +19,16 @@ const ContactCard: React.FC<Props> = ({ contact }) => (
     </Card.Header>
     <Card.Body>
       <Card.Title>
-        {contact.firstName}
-        {' '}
-        {contact.lastName}
+        {contact.firstName} {contact.lastName}
       </Card.Title>
       <Card.Subtitle className="mb-2 text-muted">{contact.address}</Card.Subtitle>
       <Card.Text>{contact.description}</Card.Text>
     </Card.Body>
+
+    {/* ✅ Add Edit Link here */}
+    <Card.Footer>
+      <Link href={`/edit/${contact.id}`}>Edit</Link>
+    </Card.Footer>
   </Card>
 );
 
