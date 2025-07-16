@@ -15,7 +15,7 @@ export const EditStuffSchema = Yup.object({
   owner: Yup.string().required(),
 });
 
-// ✅ New Contact validation schemas
+// ✅ Contact validation schemas
 
 export const AddContactSchema = Yup.object({
   firstName: Yup.string().required(),
@@ -35,6 +35,16 @@ export const EditContactSchema = Yup.object({
   description: Yup.string().required(),
   owner: Yup.string().required(),
 });
+
+// ✅ Add Note schema
+
+export const AddNoteSchema = Yup.object({
+  note: Yup.string().required('Note is required'),
+  contactId: Yup.number().required(),
+  owner: Yup.string().required(),
+});
+
+// ✅ Contact interface (still valid for both add/edit)
 
 export interface Contact {
   id?: number; // Include id optionally for AddContact use
