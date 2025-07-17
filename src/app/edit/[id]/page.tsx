@@ -31,4 +31,3 @@ export default async function EditContactPage({ params }: { params: { id: string
     </main>
   );
 }
-

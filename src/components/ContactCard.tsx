@@ -23,7 +23,9 @@ const ContactCard: React.FC<Props> = ({ contact, notes }) => (
     </Card.Header>
     <Card.Body>
       <Card.Title>
-        {contact.firstName} {contact.lastName}
+        {contact.firstName}
+        {' '}
+        {contact.lastName}
       </Card.Title>
       <Card.Subtitle className="mb-2 text-muted">{contact.address}</Card.Subtitle>
       <Card.Text>{contact.description}</Card.Text>

@@ -27,7 +27,7 @@ async function main() {
   config.defaultContacts.forEach(async (contact, index) => {
     console.log(`  Adding contact: ${contact.firstName} ${contact.lastName}`);
     await prisma.contact.upsert({
-      where: { id: index + 1 },
+      where: { id: index + 1 }, // assumes unique id per contact
       update: {},
       create: {
         firstName: contact.firstName,
